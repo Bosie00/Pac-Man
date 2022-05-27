@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public Transform pellets;
     private int score = 0;
 
-    public Text winTxt;
-    public Text scoreTxt;
+    public Text winText;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +22,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(score);
+        
     }
 
     private void SetScore(int score)
     {
         this.score = score;
-        scoreTxt.text = score.ToString().PadLeft(2, '0');
+        scoreText.text = score.ToString().PadLeft(2, '0');
     }
 
     public void PelletEaten(Pellet pellet)
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         if (!HasRemainingPellets())
         {
-            winTxt.enabled = true;
+            winText.enabled = true;
             pacman.gameObject.SetActive(false);
         }
     }
