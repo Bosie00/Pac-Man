@@ -35,5 +35,11 @@ public class Pacman : MonoBehaviour
         {
             this.movement.SetDirection(Vector2.right);
         }
+
+        //Rotazione di Pac-man
+        //calcolo dell'angolo (in radianti) usando le direzioni x e y per trovare la tangente
+        float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
+        //conversione da radianti in gradi e rotazione in base all'angolo
+        transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 }
