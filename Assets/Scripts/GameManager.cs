@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Pacman pacman;
     public Transform pellets;
-    private int score;
+    private int score = 0;
 
     public Text winTxt;
     public Text scoreTxt;
@@ -16,13 +16,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(score);
     }
 
     private void SetScore(int score)

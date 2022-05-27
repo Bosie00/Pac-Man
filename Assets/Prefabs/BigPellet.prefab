@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2388851256289893823}
   - component: {fileID: 9144799463301023125}
   - component: {fileID: 4903748864121615362}
+  - component: {fileID: 7208994304538252135}
   m_Layer: 8
   m_Name: BigPellet
   m_TagString: Untagged
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7208994304538252135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779675050254597770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212489ad0786a9c42a4d5bbba54ebb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 50
