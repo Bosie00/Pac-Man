@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Pacman : MonoBehaviour
 {
+    public Movement movement;
+
+    private void Awake() {
+        this.movement = GetComponent<Movement>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +19,21 @@ public class Pacman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            this.movement.SetDirection(Vector2.up);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.movement.SetDirection(Vector2.down);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            this.movement.SetDirection(Vector2.left);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.movement.SetDirection(Vector2.right);
+        }
     }
 }
