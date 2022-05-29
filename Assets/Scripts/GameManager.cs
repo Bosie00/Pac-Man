@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         if (NoMorePellets())
         {
             Debug.Log("177013");
+            winText.text = "You Won";
             winText.enabled = true;
             pacman.gameObject.SetActive(false);
         }
