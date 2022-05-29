@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         winText.enabled = false;
-        score=0;
-        UpdateScore();
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -27,27 +26,18 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void UpdateScore() 
-    {
-        scoreText.text = "" + score;
-    }
-
-    private void SetScore(int score)
+    private void UpdateScore(int score)
     {
         this.score = score;
-        scoreText.text = score.ToString().PadLeft(2, '0');
+        scoreText.text = "" + score;
     }
 
     public void PelletEaten(Pellet pellet)
     {
         pellet.gameObject.SetActive(false);
-
-        SetScore(score + pellet.points);
-        UpdateScore();
-
+        UpdateScore(score + pellet.points);
         if (NoMorePellets())
         {
-            Debug.Log("177013");
             winText.text = "You Won";
             winText.enabled = true;
             pacman.gameObject.SetActive(false);

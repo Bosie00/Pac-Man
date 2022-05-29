@@ -7,18 +7,6 @@ public class Pellet : MonoBehaviour
 {
     public int points;
 
-    protected virtual void Eat()
-    {
-        FindObjectOfType<GameManager>().PelletEaten(this);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
-            Eat();
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +17,10 @@ public class Pellet : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        FindObjectOfType<GameManager>().PelletEaten(this);
     }
 }

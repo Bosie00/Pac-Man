@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
     {
         direction = initialDirection;
         nextDirection = Vector2.zero;
-        transform.position = startingPosition;
     }
 
     // Update is called once per frame
@@ -39,7 +38,6 @@ public class Movement : MonoBehaviour
     {
         Vector2 position = rigidbody.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
-
         rigidbody.MovePosition(position + translation);
     }
 

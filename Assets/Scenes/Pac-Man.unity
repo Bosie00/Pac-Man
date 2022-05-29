@@ -10846,11 +10846,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  initialDirection: {x: 1, y: 0}
+  initialDirection: {x: -1, y: 0}
   wallsLayer:
     serializedVersion: 2
     m_Bits: 512
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 2146873761}
   direction: {x: 0, y: 0}
   nextDirection: {x: 0, y: 0}
   startingPosition: {x: 0, y: 0, z: 0}
@@ -10867,7 +10867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2146873762}
-  time: 0.08
+  time: 0.1
   frames:
   - {fileID: 21300000, guid: 9ac1c8342820b2f40a73e4d1353f7353, type: 3}
   - {fileID: 21300000, guid: 363e0aac025daf346abf94631ee0be7c, type: 3}

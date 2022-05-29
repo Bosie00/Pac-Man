@@ -17,17 +17,16 @@ public class Animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(Animate), this.time, this.time);
+        InvokeRepeating(nameof(Animate), time, time);
     }
 
     private void Animate() {
-        this.i++;
+        i++;
         if(spriteRenderer.enabled == false) {
             return;
         }
-
-        if (i>=frames.Length || time<0) {
-            i =0;
+        if (i>=frames.Length) {
+            i=0;
         }
         spriteRenderer.sprite = frames[i];
 
