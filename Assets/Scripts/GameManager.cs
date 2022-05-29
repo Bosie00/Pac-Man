@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
 {
     public Pacman pacman;
     public Transform pellets;
-    private int score = 0;
+    private int score;
 
-    public Text winText;
-    public Text scoreText;
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        winText.enabled = false;
+        score=0;
+        UpdateScore();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void UpdateScore() 
+    {
+        scoreText.text = "" + score;
     }
 
     private void SetScore(int score)
@@ -36,23 +43,24 @@ public class GameManager : MonoBehaviour
         pellet.gameObject.SetActive(false);
 
         SetScore(score + pellet.points);
+        UpdateScore();
 
-        if (!HasRemainingPellets())
+        if (NoMorePellets())
         {
+            Debug.Log("177013");
             winText.enabled = true;
             pacman.gameObject.SetActive(false);
         }
     }
     
-    private bool HasRemainingPellets()
+    private bool NoMorePellets()
     {
         foreach (Transform pellet in pellets)
         {
             if (pellet.gameObject.activeSelf) {
-                return true;
+                return false;
             }
         }
-
-        return false;
+        return true;
     }
 }
